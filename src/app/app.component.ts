@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+
+// A decorator (ie. a function taking one object as an argument, and this object has 3 properties)
 @Component({
-  selector: 'pm-root',
+  selector: 'apm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular: Getting Started';
+  pageTitle: string = 'ACME Product Management';
 }
