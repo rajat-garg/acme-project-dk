@@ -8,13 +8,13 @@
         Filter By:
       </div>
       <div class="col-md-4">
-        <input type="text" name="filterText" class="form-control" />
+        <input type="text" name="filterText" class="form-control" [(ngModel)]='listFilter'/>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-6">
-        <h3>Filtered By:</h3>
+      <div class="col-md-6 text-left">
+        <h3>Filtered By: {{listFilter}}</h3>
       </div>
     </div>
 
@@ -41,9 +41,9 @@
               />
             </td>
             <td>{{product.productName}}</td>
-            <td>{{product.productCode}}</td>
+            <td>{{product.productCode | lowercase}}</td>
             <td>{{product.releaseDate}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.price | currency:'INR':true:'2.2-2'}}</td>
             <td>{{product.starRating}}</td>
           </tr>
         </tbody>
