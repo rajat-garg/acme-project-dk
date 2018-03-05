@@ -8,7 +8,7 @@
         Filter By:
       </div>
       <div class="col-md-4">
-        <input type="text" name="filterText" class="form-control" [(ngModel)]='listFilter'/>
+        <input type="text" name="filterText" class="form-control" [(ngModel)]='listFilter' />
       </div>
     </div>
 
@@ -44,7 +44,9 @@
             <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
             <td>{{product.releaseDate}}</td>
             <td>{{product.price | currency:'INR':true:'2.2-2'}}</td>
-            <td>{{product.starRating}}</td>
+            <td>
+              <apm-star [rating]='product.starRating' (ratingEvent)='onRatingClicked($event)'></apm-star>
+            </td>
           </tr>
         </tbody>
       </table>
